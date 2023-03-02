@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class triangle {
+private:
+    float a, b, c;
+public:
+    bool exst_tr() {
+        return ((a + b > c) && (b + c > a) && (a + c > b));
+    }
+    void set(float a1, float b1, float c1) {
+        a = a1;
+        b = b1;
+        c = c1;
+    }
+    void show() {
+        cout << "1 сторона: " << a << endl;
+        cout << "2 сторона: " << b << endl;
+        cout << "3 сторона: " << c << endl;
+    }
+    float perimetr() {
+        float p = a + b + c;
+        return p;
+    }
+    float square() {
+        float minip = (a + b + c) / 2;
+        float s = sqrt(minip * (minip - a) * (minip - b) * (minip - c));
+        return s;
+    }
+};
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    triangle tr[3];
+    float a, b, c;
+    int i = 0;
+    while (i < 3)
+    {
+        cout << "стороны треугольника" << endl;
+        cin >> a >> b >> c;
+        tr[i].set(a, b, c);
+        if (tr[i].exst_tr())
+        {
+            i++;
+        }
+        else
+        {
+            cout << "не существует";
+        }
+    }
+    for (int i = 0; i < 3; i++) {
+        tr[i].show();
+        cout << "периметр " << tr[i].perimetr() << endl;
+        cout << "площадь " << tr[i].square() << endl;
+    }
+    return 0;
+}
