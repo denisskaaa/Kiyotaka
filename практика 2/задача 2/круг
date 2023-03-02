@@ -1,0 +1,36 @@
+# включить  " circle.h "
+используя  пространство имен  std ;
+круг::круг ( с плавающей запятой r, с плавающей запятой x, с плавающей запятой y) {
+    радиус = г;
+    х_центр = х;
+    у_центр = у;
+};
+void  circle::set_circle ( float r, float x, float y)
+{
+    радиус = г;
+    х_центр = х;
+    у_центр = у;
+};
+плавающий  круг:: квадрат ()
+{
+    вернуть  пи * радиус * радиус;
+}
+bool  circle::triangle_around ( float a, float b, float c) {
+    двойной минип = (a + b + c) * 0,5 ;
+    double s = sqrt (минип * (минип - а) * (минип - b) * (минип - с));
+    return (радиус >= ((a + b + c) / ( 4 * s)));
+}
+bool  circle::triangle_in ( float a, float b, float c) {
+    двойной минип = (a + b + c) * 0,5 ;
+    double s = sqrt (минип * (минип - а) * (минип - b) * (минип - с));
+    возврат (радиус <= s/minip);
+}
+bool  circle::check_circle ( float r, float x_cntr, float y_cntr) {
+    float rad2 = sqrt ( pow ((x_cntr - x_center), 2 ) + pow ((y_cntr - y_center), 2 ));
+    возврат (радиус + r <= rad2);
+}
+пустой  круг:: показать () {
+    cout << " радиус " << радиус << endl;
+    cout << " Х круга " << x_center << endl;
+    cout << " Y круга " << y_center << endl;
+}
